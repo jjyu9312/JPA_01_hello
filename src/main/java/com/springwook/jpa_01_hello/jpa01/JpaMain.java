@@ -88,11 +88,34 @@ public class JpaMain {
             System.out.println("=====================================");
              */
 
+            /*
             Member findMember = em.find(Member.class, 150L);
             findMember.setName("Z");
 
             // em.persist(findMember); 해당 코드는 필요없음. 왜냐하면 Collections과 같다고 생각하면 됨
+             */
+
+
+            /*
+            // flush 예시
+            Member member = new Member(300L, "mmm");
+            em.persist(member);
+
+            em.flush();
+
+            System.out.println("===============================");
+
+             */
+
+            Member findMember1 = em.find(Member.class, 4L);
+            findMember1.setName("gong");
+
+            // 준영속 상태 -> 쿼리 안 날아감
+            em.detach(findMember1);
+            System.out.println("===============================");
+
             tx.commit();
+
         } catch (Exception e) {
             tx.rollback();
 
