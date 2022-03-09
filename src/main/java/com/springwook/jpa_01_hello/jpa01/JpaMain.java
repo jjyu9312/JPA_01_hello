@@ -107,12 +107,14 @@ public class JpaMain {
 
              */
 
+            /*
             Member findMember1 = em.find(Member.class, 4L);
             findMember1.setName("gong");
 
             // 준영속 상태 -> 쿼리 안 날아감
             em.detach(findMember1);
             System.out.println("===============================");
+            */
 
             tx.commit();
 

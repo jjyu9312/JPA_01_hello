@@ -1,7 +1,7 @@
 package com.springwook.jpa_01_hello.jpa01;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Member {
@@ -9,28 +9,27 @@ public class Member {
     @Id
     private Long id;
 
-    private String name;
+    @Column(name = "name") // 데이터베이스와 컬럼명 매칭
+    private String username;
 
-    public Member(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    private Integer age;
 
-    public Member() {};
+    @Enumerated(EnumType.STRING) // 자바 Enum 타입과 매핑
+    private RoleType roleType;
 
-    public Long getId() {
-        return id;
-    }
+    @Temporal(TemporalType.TIMESTAMP) // 자바 날짜 타입과 매핑
+    private Date createdDate;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updatedDate;
 
-    public String getName() {
-        return name;
-    }
+    @Lob // Varchar를 넘어서는 큰 컨텐츠를 넣고 싶을 때 사용
+    private String description;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Transient // DB와 매핑하고 싶지 않은 엔티티를 사용하고 싶을 때
+    private int temp;
+
+    public Member(){}
+
+
 }
