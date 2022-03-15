@@ -25,8 +25,10 @@ public class JpaMain {
             Member member = new Member();
             member.setUsername("member1");
             //member.setTeamId(team.getTeamId());
-            member.setTeam(team); // 알아서 JPA가 team을 찾아옴
+            member.changeTeam(team); // 알아서 JPA가 team을 찾아옴
             em.persist(member);
+
+            //team.getMembers().add(member);
 
             em.flush();
             em.clear();
