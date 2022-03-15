@@ -7,11 +7,45 @@ import java.util.Date;
 public class Member {
 
     @Id
+    @GeneratedValue
+    @Column(name = "NAME_ID")
     private Long id;
 
-    @Column(name = "name") // 데이터베이스와 컬럼명 매칭
+    @Column(name = "USERNAME") // 데이터베이스와 컬럼명 매칭
     private String username;
 
+//    @Column(name = "TEAM_ID")
+//    private Long teamId;
+
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
+
+    /*
     private Integer age;
 
     @Enumerated(EnumType.STRING) // 자바 Enum 타입과 매핑
@@ -30,6 +64,7 @@ public class Member {
     private int temp;
 
     public Member(){}
+     */
 
 
 }

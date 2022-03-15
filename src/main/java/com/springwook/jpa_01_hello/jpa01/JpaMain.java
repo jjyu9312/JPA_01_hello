@@ -17,6 +17,26 @@ public class JpaMain {
         tx.begin();
 
         try {
+            // 단방향 관계
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+
+            Member member = new Member();
+            member.setUsername("member1");
+            //member.setTeamId(team.getTeamId());
+            member.setTeam(team); // 알아서 JPA가 team을 찾아옴
+            em.persist(member);
+
+            em.flush();
+            em.clear();
+
+            // 조회
+            Member findM = em.find(Member.class, member.getId());
+            Team findTeam = findM.getTeam();
+            System.out.println("findTeamName = " + findTeam.getName());
+
+            tx.commit();
             /* 생성
             Member member = new Member();
 
@@ -115,8 +135,6 @@ public class JpaMain {
             em.detach(findMember1);
             System.out.println("===============================");
             */
-
-            tx.commit();
 
         } catch (Exception e) {
             tx.rollback();

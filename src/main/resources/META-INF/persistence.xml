@@ -5,6 +5,7 @@
 
     <persistence-unit name="happy">
         <class>com.springwook.jpa_01_hello.jpa01.Member</class>
+        <class>com.springwook.jpa_01_hello.jpa01.Team</class>
         <properties>
 
         <!-- 필수 속성 -->
