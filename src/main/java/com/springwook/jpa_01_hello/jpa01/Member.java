@@ -57,11 +57,15 @@ public class Member {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedDate;
 
-    @Lob // Varchar를 넘어서는 큰 컨텐츠를 넣고 싶을 때 사용
+    @Column(name = "description")// Varchar를 넘어서는 큰 컨텐츠를 넣고 싶을 때 사용
     private String description;
 
     @Transient // DB와 매핑하고 싶지 않은 엔티티를 사용하고 싶을 때
     private int temp;
+
+    public String getDescription() {
+        return description;
+    }
 
     public Member(){}
      */

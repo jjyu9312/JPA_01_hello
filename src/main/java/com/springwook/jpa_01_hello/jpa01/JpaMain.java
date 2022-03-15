@@ -34,7 +34,7 @@ public class JpaMain {
             // 조회
             Member findM = em.find(Member.class, member.getId());
             Team findTeam = findM.getTeam();
-            System.out.println("findTeamName = " + findTeam.getName());
+            System.out.println("findTeamName : " + findTeam.getName());
 
             tx.commit();
             /* 생성
