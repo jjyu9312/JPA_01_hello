@@ -17,8 +17,13 @@ public class Member {
 //    @Column(name = "TEAM_ID")
 //    private Long teamId;
 
+//    @ManyToOne
+//    @JoinColumn(name = "TEAM_ID")
+//    private Team team;
+
+    // 1:N 양방향
     @ManyToOne
-    @JoinColumn(name = "TEAM_ID")
+    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false) // 연관관계 주인처럼 만들었지만 읽기 전용 필드로 사용
     private Team team;
 
     public Long getId() {

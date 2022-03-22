@@ -14,7 +14,12 @@ public class Team {
 
     private String name;
 
-    @OneToMany(mappedBy = "team")
+//    @OneToMany(mappedBy = "team")
+//    private List<Member> members = new ArrayList<>();
+
+    // 1:N 관계에서 연관관계 주인
+    @OneToMany
+    @JoinColumn(name = "TEAM_ID")
     private List<Member> members = new ArrayList<>();
 
     public Long getTeamId() {
