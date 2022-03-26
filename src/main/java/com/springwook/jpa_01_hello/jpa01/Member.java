@@ -26,6 +26,10 @@ public class Member {
     @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false) // 연관관계 주인처럼 만들었지만 읽기 전용 필드로 사용
     private Team team;
 
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
     public Long getId() {
         return id;
     }
