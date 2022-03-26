@@ -3,10 +3,12 @@ package com.springwook.jpa_01_hello.jpa01;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class Locker {
+public class Products {
 
     @Id
     @GeneratedValue
@@ -14,8 +16,8 @@ public class Locker {
 
     private String name;
 
-    @OneToOne(mappedBy = "locker")
-    private Member member;
+    @OneToMany(mappedBy = "products")
+    private List<MemberProduct> memberProducts = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -31,13 +33,5 @@ public class Locker {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Member getMember() {
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
     }
 }

@@ -1,7 +1,9 @@
 package com.springwook.jpa_01_hello.jpa01;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Member {
@@ -29,6 +31,13 @@ public class Member {
     @OneToOne
     @JoinColumn(name = "LOCKER_ID")
     private Locker locker;
+
+//    @ManyToMany
+//    @JoinTable(name = "MEMBER_PRODUCT") // 연결 테이블이 PK가 FK가 되는 구조
+//    private List<Products> products = new ArrayList<>();
+//    아래와 같이 사용 OneToMany + ManyToOne
+    @OneToMany(mappedBy = "member")
+    private List<MemberProduct> products = new ArrayList<>();
 
     public Long getId() {
         return id;
