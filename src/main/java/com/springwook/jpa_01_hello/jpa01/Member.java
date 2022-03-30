@@ -33,7 +33,7 @@ public class Member {
     private Locker locker;
 
 //    @ManyToMany
-//    @JoinTable(name = "MEMBER_PRODUCT") // 연결 테이블이 PK가 FK가 되는 구조
+//    @JoinTable(name = "MEMBER_PRODUCT") // 연결 테이블이 PK가 FK가 되는 구조로 사용됨
 //    private List<Products> products = new ArrayList<>();
 //    아래와 같이 사용 OneToMany + ManyToOne
     @OneToMany(mappedBy = "member")
