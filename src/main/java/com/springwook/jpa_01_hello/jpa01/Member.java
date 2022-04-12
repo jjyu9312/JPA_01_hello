@@ -1,12 +1,13 @@
 package com.springwook.jpa_01_hello.jpa01;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Member {
+public class Member extends BaseEntity{
 
     @Id
     @GeneratedValue
@@ -22,6 +23,7 @@ public class Member {
 //    @ManyToOne
 //    @JoinColumn(name = "TEAM_ID")
 //    private Team team;
+
 
     // 1:N 양방향에 사용
     @ManyToOne

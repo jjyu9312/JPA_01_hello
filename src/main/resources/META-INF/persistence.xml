@@ -6,6 +6,13 @@
     <persistence-unit name="happy">
         <class>com.springwook.jpa_01_hello.jpa01.Member</class>
         <class>com.springwook.jpa_01_hello.jpa01.Team</class>
+        <class>com.springwook.jpa_01_hello.jpa01.Locker</class>
+        <class>com.springwook.jpa_01_hello.jpa01.MemberProduct</class>
+        <class>com.springwook.jpa_01_hello.jpa01.Products</class>
+        <class>com.springwook.jpa_01_hello.jpa01.Item</class>
+        <class>com.springwook.jpa_01_hello.jpa01.Movie</class>
+        <class>com.springwook.jpa_01_hello.jpa01.Album</class>
+        <class>com.springwook.jpa_01_hello.jpa01.Book</class>
         <properties>
 
         <!-- 필수 속성 -->

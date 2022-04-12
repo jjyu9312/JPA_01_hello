@@ -17,6 +17,23 @@ public class JpaMain {
         tx.begin();
 
         try {
+
+            Movie movie = new Movie();
+            movie.setDirector("안소니 루소");
+            movie.setActor("로다주");
+            movie.setName("어벤져스");
+            movie.setPrice(10000);
+
+            em.persist(movie);
+
+            em.flush();
+            em.clear();
+
+            Movie findMovie = em.find(Movie.class, movie.getId());
+            System.out.println("findMovie = " + findMovie);
+
+            tx.commit();
+
             // 단방향 관계
 //            Team team = new Team();
 //            team.setName("TeamA");
