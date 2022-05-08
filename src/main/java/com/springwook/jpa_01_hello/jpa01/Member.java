@@ -41,6 +41,13 @@ public class Member extends BaseEntity{
     @OneToMany(mappedBy = "member")
     private List<MemberProduct> products = new ArrayList<>();
 
+    /* BaseEntity가 역할 대체
+    private String createdBy;
+    private LocalDateTime createdDate;
+    private String lastModifiedBy;
+    private LocalDateTime lastModifiedDate;
+    */
+
     public Long getId() {
         return id;
     }
