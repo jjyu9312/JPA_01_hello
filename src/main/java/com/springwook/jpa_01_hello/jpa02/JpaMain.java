@@ -23,7 +23,7 @@ public class JpaMain {
             member.setUsername("hello");
             member.setHomeAddress(new Address("city", "street", "zipcode"));
             member.setWorkPeriod(new Period());
-
+            System.out.println();
             em.persist(member);
             tx.commit();
 //            Child child1 = new Child();
