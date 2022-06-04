@@ -19,19 +19,26 @@ public class JpaMain {
 
         try {
 
-            Child child1 = new Child();
-            Child child2 = new Child();
+            Member member = new Member();
+            member.setUsername("hello");
+            member.setHomeAddress(new Address("city", "street", "zipcode"));
+            member.setWorkPeriod(new Period());
 
-            Parent parent = new Parent();
-            parent.addChild(child1);
-            parent.addChild(child2);
-
-            em.persist(parent);
-            // cascade 사용함으로써 child에 영속 상태를 주지 않아도 영속 상태가 됨
-//            em.persist(child1);
-//            em.persist(child2);
-
+            em.persist(member);
             tx.commit();
+//            Child child1 = new Child();
+//            Child child2 = new Child();
+//
+//            Parent parent = new Parent();
+//            parent.addChild(child1);
+//            parent.addChild(child2);
+//
+//            em.persist(parent);
+//            // cascade 사용함으로써 child에 영속 상태를 주지 않아도 영속 상태가 됨
+////            em.persist(child1);
+////            em.persist(child2);
+
+//            tx.commit();
 
             // 단방향 관계
 //            Team team = new Team();

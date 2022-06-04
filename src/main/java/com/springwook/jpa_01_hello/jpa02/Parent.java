@@ -24,5 +24,4 @@ public class Parent {
         childList.add(child);
         child.setParent(this);
     }
-
 }
