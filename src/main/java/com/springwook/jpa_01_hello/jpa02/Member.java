@@ -18,7 +18,6 @@ public class Member {
     @Column(name = "USERNAME")
     private String username;
 
-
     @Embedded
     private Period workPeriod;
 
