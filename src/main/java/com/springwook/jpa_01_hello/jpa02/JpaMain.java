@@ -20,12 +20,22 @@ public class JpaMain {
         try {
 
             Member member = new Member();
-            member.setUsername("hello");
+            member.setUsername("member1");
             member.setHomeAddress(new Address("city", "street", "zipcode"));
-            member.setWorkPeriod(new Period());
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("피자");
+            member.getFavoriteFoods().add("떡볶이");
+            member.getAddressHistory().add(new Address("old1", "street", "10000"));
+            member.getAddressHistory().add(new Address("old2", "street2", "20000"));
+
+//            Member member = new Member();
+//            member.setUsername("hello");
+//            member.setHomeAddress(new Address("city", "street", "zipcode"));
+//            member.setWorkPeriod(new Period());
 
             em.persist(member);
             tx.commit();
+            
 //            Child child1 = new Child();
 //            Child child2 = new Child();
 //
