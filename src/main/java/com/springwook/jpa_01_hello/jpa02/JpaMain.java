@@ -27,6 +27,7 @@ public class JpaMain {
             member.getFavoriteFoods().add("떡볶이");
             member.getAddressHistory().add(new Address("old1", "street", "10000"));
             member.getAddressHistory().add(new Address("old2", "street2", "20000"));
+            // 값 타입 컬렉션들이 자동으로 다른 테이블인데도 불구하고 라이프 사이클이 같이 돌아감 (즉, member가 저장될 때 같이 저장됨)
 
 //            Member member = new Member();
 //            member.setUsername("hello");
@@ -35,7 +36,7 @@ public class JpaMain {
 
             em.persist(member);
             tx.commit();
-            
+
 //            Child child1 = new Child();
 //            Child child2 = new Child();
 //
