@@ -29,7 +29,7 @@ public class JpaMain {
             member.getAddressHistory().add(new Address("old2", "street2", "20000"));
 
             System.out.println();
-            
+
             // 값 타입 컬렉션들이 자동으로 다른 테이블인데도 불구하고 라이프 사이클이 같이 돌아감 (즉, member가 저장될 때 같이 저장됨)
 
 //            Member member = new Member();
@@ -54,6 +54,7 @@ public class JpaMain {
 
 //            tx.commit();
 
+            
             // 단방향 관계
 //            Team team = new Team();
 //            team.setName("TeamA");
