@@ -53,7 +53,6 @@ public class JpaMain {
 ////            em.persist(child2);
 
 //            tx.commit();
-
             
             // 단방향 관계
 //            Team team = new Team();
