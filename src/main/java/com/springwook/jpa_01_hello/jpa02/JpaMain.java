@@ -37,8 +37,6 @@ public class JpaMain {
 //            member.setHomeAddress(new Address("city", "street", "zipcode"));
 //            member.setWorkPeriod(new Period());
 
-
-            
             em.persist(member);
             tx.commit();
 
