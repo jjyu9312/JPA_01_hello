@@ -37,6 +37,8 @@ public class JpaMain {
 //            member.setHomeAddress(new Address("city", "street", "zipcode"));
 //            member.setWorkPeriod(new Period());
 
+
+            
             em.persist(member);
             tx.commit();
 
@@ -53,7 +55,7 @@ public class JpaMain {
 ////            em.persist(child2);
 
 //            tx.commit();
-            
+
             // 단방향 관계
 //            Team team = new Team();
 //            team.setName("TeamA");
