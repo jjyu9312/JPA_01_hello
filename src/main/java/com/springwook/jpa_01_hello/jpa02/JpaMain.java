@@ -40,6 +40,8 @@ public class JpaMain {
             em.persist(member);
             tx.commit();
 
+
+
 //            Child child1 = new Child();
 //            Child child2 = new Child();
 //
