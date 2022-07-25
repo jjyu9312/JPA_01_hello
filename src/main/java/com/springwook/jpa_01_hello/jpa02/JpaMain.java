@@ -39,8 +39,12 @@ public class JpaMain {
 //            member.setHomeAddress(new Address("city", "street", "zipcode"));
 //            member.setWorkPeriod(new Period());
 
+
+
             em.persist(member);
             tx.commit();
+
+
 
 //            Child child1 = new Child();
 //            Child child2 = new Child();
