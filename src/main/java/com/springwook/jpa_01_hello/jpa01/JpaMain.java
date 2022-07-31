@@ -34,6 +34,8 @@ public class JpaMain {
 
             tx.commit();
 
+
+
 //            단방향 관계
 //            Team team = new Team();
 //            team.setName("TeamA");
