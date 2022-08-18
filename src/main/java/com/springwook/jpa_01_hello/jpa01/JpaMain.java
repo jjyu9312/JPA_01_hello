@@ -32,6 +32,8 @@ public class JpaMain {
             Movie findMovie = em.find(Movie.class, movie.getId());
             System.out.println("findMovie = " + findMovie);
 
+            System.out.println("testss");
+
             tx.commit();
 
 //            단방향 관계
