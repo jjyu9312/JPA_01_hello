@@ -35,6 +35,8 @@ public class JpaMain {
             System.out.println("testss");
 
             tx.commit();
+            
+            
 //            단방향 관계
 //            Team team = new Team();
 //            team.setName("TeamA");
