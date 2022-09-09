@@ -18,6 +18,8 @@ public class JpaMain {
 
         try {
 
+
+
             Movie movie = new Movie();
             movie.setDirector("안소니 루소");
             movie.setActor("로다주");
